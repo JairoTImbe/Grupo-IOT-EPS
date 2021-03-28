@@ -16,8 +16,9 @@
 #define PASSWORD "bj_A8DePraty" // Put here your Wi-Fi password
 
 Ubidots client(TOKEN);
-float Valor_Temperatura = 0;
 
+
+int SensorTemp=A0;
 void setup() {
     Serial.begin(115200); 
     
@@ -32,6 +33,12 @@ void setup() {
 
 void loop() 
 {
+  //lectura de el sensor de temperatura
+  int analogValue = analogRead(SensorTemp);
+  float millivolts = (analogValue/1024.0) * 3300; //3300 is the voltage provided by NodeMCU
+  float celsius = millivolts/10;
+  
+    //obtener valor del boton "var_led" en la nube.
     float Valor_Led = client.get(DEVICE, VARIABLE);
     if (Valor_Led != ERROR_VALUE){
       Serial.print(F(">>>>>>>>> VALOR OBTENIDO POR EL LED: "));
@@ -40,11 +47,8 @@ void loop()
       Serial.println(F("Error getting Valor_Led"));
     }
 
-    if (Valor_Temperatura>100)Valor_Temperatura=0;
-  
-    Valor_Temperatura = Valor_Temperatura + 5 ;
-    
-    client.add(ID_TEMP, Valor_Temperatura); 
+    //envio de temperatura a la nube
+    client.add(ID_TEMP, celsius); 
     client.send();
     delay(1000);
 }
