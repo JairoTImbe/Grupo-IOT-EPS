@@ -7,7 +7,7 @@
 
 #include "Ubidots.h"
 
-#define DEVICE  "esp8266_principal"  // Put here your Ubidots device label
+#define DEVICE  "40f5202de2c5"  // Put here your Ubidots device label
 #define VARIABLE  "var_led"  // Put here your Ubidots variable label
 #define ID_TEMP "6060a75f1d84720a0164dab8" 
 #define TOKEN  "BBFF-LOdit4otMYbe9Squ90k6C2mbmRUSeX"  // Put here your Ubidots TOKEN
@@ -39,10 +39,11 @@ void loop()
   float celsius = millivolts/10;
   
     //obtener valor del boton "var_led" en la nube.
-    float Valor_Led = client.get(DEVICE, VARIABLE);
+    float Valor_Led = client.get(DEVICE,VARIABLE);
     if (Valor_Led != ERROR_VALUE){
       Serial.print(F(">>>>>>>>> VALOR OBTENIDO POR EL LED: "));
       Serial.println(Valor_Led);
+      
     }else{
       Serial.println(F("Error getting Valor_Led"));
     }
