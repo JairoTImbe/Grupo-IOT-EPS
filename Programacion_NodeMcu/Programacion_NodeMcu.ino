@@ -17,7 +17,7 @@
 
 Ubidots client(TOKEN);
 
-
+int LED_D1 = 5;
 int SensorTemp=A0;
 void setup() {
     Serial.begin(115200); 
@@ -28,6 +28,7 @@ void setup() {
 
     pinMode(LED_BUILTIN, OUTPUT);
     digitalWrite(LED_BUILTIN, 1);
+    pinMode(LED_D1, OUTPUT);
     //client.setDebug(true); // Uncomment this line to set DEBUG on
 }
 
@@ -46,6 +47,16 @@ void loop()
       
     }else{
       Serial.println(F("Error getting Valor_Led"));
+    }
+
+    //Encendido y apagado del led fisico
+
+    if(Valor_Led==1.00){
+      digitalWrite(LED_D1, HIGH);
+      Serial.println("igual");
+    }
+    else{
+      digitalWrite(LED_D1, LOW);
     }
 
     //envio de temperatura a la nube
