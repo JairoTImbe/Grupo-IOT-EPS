@@ -27,7 +27,7 @@ void setup() {
   thing["led"] << digitalPin(LED_BUILTIN);
   thing["LED_D1"] << digitalPin(LED_D1);
   // resource output example (i.e. reading a sensor value)
-  thing["millis"] >> outputValue(celsius);
+  thing["dash_Temperatura"] >> outputValue(celsius);
 }
 
 void loop() {
