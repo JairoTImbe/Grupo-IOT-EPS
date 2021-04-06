@@ -10,7 +10,7 @@
 #define DEVICE  "40f5202de2c5"  // Put here your Ubidots device label
 #define VARIABLE  "var_led"  // Put here your Ubidots variable label
 #define ID_TEMP "6060a75f1d84720a0164dab8" 
-#define TOKEN  "BBFF-LOdit4otMYbe9Squ90k6C2mbmRUSeX"  // Put here your Ubidots TOKEN
+#define TOKEN  "BBFF-uAJoq4Lmyv2S4KjlkVVLiAFOKyBEqZ"  // Put here your Ubidots TOKEN
 
 #define WIFISSID "CanarNet_Familia Timbe" // Put here your Wi-Fi SSID
 #define PASSWORD "bj_A8DePraty" // Put here your Wi-Fi password

@@ -1,5 +1,5 @@
 {
     "board": "esp8266:esp8266:nodemcuv2",
     "port": "COM3",
-    "sketch": "Programacion_Thinger_io\\Programacion_Thinger_io.ino"
+    "sketch": "Programacion_NodeMcu\\Programacion_NodeMcu.ino"
 }
