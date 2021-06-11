@@ -42,7 +42,7 @@ void loop()
     //obtener valor del boton "var_led" en la nube.
     float Valor_Led = client.get(DEVICE,VARIABLE);
     if (Valor_Led != ERROR_VALUE){
-      Serial.print(F(">>>>>>>>> VALOR OBTENIDO POR EL LED: "));
+      Serial.print(F(" VALOR OBTENIDO POR EL LED: "));
       Serial.println(Valor_Led);
       
     }else{
